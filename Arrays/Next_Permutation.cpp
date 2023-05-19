@@ -9,7 +9,6 @@ public:
                 break;
             }
         }
-
         if(ind == -1){
             reverse(nums.begin(), nums.end());
             return;
