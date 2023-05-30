@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int isSmallestDivisor(vector<int>& nums, int threshold, int mid){
+    bool isSmallestDivisor(vector<int>& nums, int threshold, int mid){
         int sum = 0;
         for(int i=0; i<nums.size(); i++){
             if(nums[i] % mid == 0){
@@ -12,7 +12,12 @@ public:
                 sum += div + 1;               
             }
         }
-        return sum;
+        if(sum <= threshold){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     int smallestDivisor(vector<int>& nums, int threshold) {
@@ -22,7 +27,7 @@ public:
 
         while(start <= end){
             int mid = start + (end-start) / 2;
-            if(isSmallestDivisor(nums,threshold,mid) <= threshold){
+            if(isSmallestDivisor(nums,threshold,mid) ){
                 ans = mid;
                 end = mid-1;
             }
