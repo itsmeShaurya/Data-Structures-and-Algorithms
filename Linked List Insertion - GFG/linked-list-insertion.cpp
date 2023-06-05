@@ -41,7 +41,8 @@ class Solution{
        // Your code here
        Node *new_node = new Node(x);
        new_node->next = head;
-       return new_node;
+       head = new_node;
+       return head;
     }
     
     
@@ -49,10 +50,11 @@ class Solution{
     Node *insertAtEnd(Node *head, int x)  {
        // Your code here
        Node *new_node = new Node(x);
-              if(head==NULL){
-           Node *temp = new Node(x);
-           return temp;
+       
+       if(head==NULL){
+           return new_node;
        }
+       
        Node *temp = head;
        while(temp->next != NULL){
            temp = temp->next;
