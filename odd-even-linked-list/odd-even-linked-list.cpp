@@ -21,9 +21,9 @@ public:
         ListNode *evenHead = head->next;
 
         while(odd->next != NULL && even->next != NULL){
-            odd->next = odd->next->next;
-            even->next = even->next->next;
+            odd->next = even->next; //Connect all odds
             odd = odd->next;
+            even->next = odd->next;  //Connect all evens 
             even = even->next;
         }
         odd->next = evenHead;
