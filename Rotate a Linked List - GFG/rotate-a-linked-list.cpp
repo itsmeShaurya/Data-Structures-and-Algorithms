@@ -46,7 +46,7 @@ class Solution
         }
         curr->next = head;
         k = k%length;
-        // k = length - k + 1;
+        // k = length - k;
 
         while(k--){
             curr = curr->next;
